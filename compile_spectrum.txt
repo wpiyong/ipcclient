@@ -1,0 +1,10 @@
+cc -fPIC -shared -o libspectrum.so spectrum.c
+
+/***
+another way using gcc
+***/
+
+gcc -fPIC -g -c -Wall spectrum.c
+gcc -shared -Wl,-soname,libspectrum.so.1 -o libspectrum.so.1.0 *.o
+/* gcc -shared  spectrum.o -L/usr/lib -ln3 -o libspectrum.so */
+/* gcc -shared  spectrum.o -o libspectrum.so */
